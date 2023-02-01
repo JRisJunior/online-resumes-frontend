@@ -1,24 +1,24 @@
-import axios from 'axios';
-import { useState, useEffect } from 'react';
-import { StudentsIndex } from "./StudentsIndex";
+
+import { Home } from "./Home";
+import axios from "axios";
+import { useState, useEffect } from "react";
 
 export function Content() {
-
   const [students, setStudents] = useState([]);
 
-  const handleIndexStudents = () => {
-    console.log("handleIndexStudents");
+  const handleIndexStudent = () => {
     axios.get("http://localhost:3000/students.json").then((response) => {
-      console.log(response.data);
       setStudents(response.data);
     });
   };
 
-useEffect(handleIndexStudents, []);
+  useEffect(handleIndexStudent, []);
 
   return (
     <div>
-      <StudentsIndex students={students} />
+      <h1>Student Resumes</h1>
+      <Home students={students} />
     </div>
   );
 }
+
