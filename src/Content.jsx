@@ -15,7 +15,9 @@ export function Content() {
 
   return (
     <div>
-      <h1>Student Resumes</h1>
+      <h1>
+        <center>Welcome</center>
+      </h1>
       <Home students={students} />
     </div>
   );
