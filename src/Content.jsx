@@ -1,7 +1,8 @@
-
 import { Home } from "./Home";
+import { Resume } from "./Resume";
 import axios from "axios";
 import { useState, useEffect } from "react";
+import { Routes, Route } from "react-router-dom";
 
 export function Content() {
   const [students, setStudents] = useState([]);
@@ -19,8 +20,11 @@ export function Content() {
       <h1>
         <center>Welcome</center>
       </h1>
-      <Home students={students} />
+
+      <Routes>
+        <Route path="/" element={<Home students={students} />} />
+        <Route path="/resume" element={<Resume students={students} />} />
+      </Routes>
     </div>
   );
 }
-
