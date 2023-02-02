@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import axios from "axios";
+import { Timeline } from 'react-twitter-widgets'
 
 export function Resume() {
   const params = useParams()
@@ -62,6 +63,18 @@ export function Resume() {
           <h3>Url: {capstone.url}</h3>
         </div>
       ))}
+      <hr />
+      { resume.twitter_user &&
+        <Timeline
+          dataSource={{
+            sourceType: 'profile',
+            screenName: resume.twitter_user
+          }}
+          options={{
+            height: '400'
+          }}
+        />
+      }
     </div>
   );
 }
