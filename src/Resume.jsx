@@ -8,13 +8,14 @@ export function Resume() {
   const handleDownload = () => {
     const content = pdfRef.current;
 
-    const doc = new jsPDF();
+    const doc = new jsPDF('p','px','a3');
     doc.html(content, {
       callback: function (doc) {
         doc.save('sample.pdf');
       },
-      x: 20,
-      y: 20
+      width: 200,
+      windowWidth: 200,
+      margin: 20
     });
   };
 
