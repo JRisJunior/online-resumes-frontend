@@ -9,10 +9,11 @@ export function Content() {
       <h1>
         <center>Welcome</center>
       </h1>
-      <ResumePdf/>
+
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/resume/:id" element={<Resume />} />
+        <Route path="resumepdf" element={<ResumePdf />} />
       </Routes>
     </div>
   );

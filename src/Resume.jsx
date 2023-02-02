@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { ResumePdf } from "./ResumePdf";
 import { useParams } from "react-router-dom";
 import axios from "axios";
 
@@ -22,6 +23,7 @@ export function Resume() {
       <h2>
         <u>Resume</u>
       </h2>
+      <ResumePdf />
       <div>
         <h3>First Name: {resume.first_name}</h3>
         <h3>Last Name: {resume.last_name}</h3>

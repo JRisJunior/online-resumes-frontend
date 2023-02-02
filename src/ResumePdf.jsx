@@ -1,6 +1,6 @@
 import { useRef } from "react";
 import { jsPDF } from "jspdf";
-import './ResumePdf.css';
+import "./ResumePdf.css";
 
 export function ResumePdf() {
   const pdfRef = useRef(null);
@@ -8,37 +8,40 @@ export function ResumePdf() {
   const handleDownload = () => {
     const content = pdfRef.current;
 
-    const doc = new jsPDF('p','px','a3');
+    const doc = new jsPDF("p", "px", "a3");
     doc.html(content, {
       callback: function (doc) {
-        doc.save('sample.pdf');
+        doc.save("sample.pdf");
       },
       width: 200,
       windowWidth: 200,
-      margin: 20
+      margin: 20,
     });
   };
 
- return (
+  return (
     <div class="container">
-      <header ref={pdfRef}> 
+      <header ref={pdfRef}>
         <div class="header">
           <div class="full-name">
-            <span class="first-name">John</span> 
+            <span class="first-name">John</span>
             <span class="last-name">Doe</span>
           </div>
           <div class="contact-info">
             <span class="email">Email: </span>
-            <span class="email-val">john.doe@gmail.com</span>
+            <span class="email-val">john.doe@gmail.com</span>{" "}
             <span class="separator"></span>
             <span class="phone">Phone: </span>
             <span class="phone-val">111-222-3333</span>
           </div>
-    
+
           <div class="about">
             <span class="position">Front-End Developer </span>
             <span class="desc">
-        I am a front-end developer with more than 3 years of experience writing html, css, and js. I'm motivated, result-focused and seeking a successful team-oriented company with opportunity to grow. 
+              I am a front-end developer with more than 3 years of experience
+              writing html, css, and js. I'm motivated, result-focused and
+              seeking a successful team-oriented company with opportunity to
+              grow.
             </span>
           </div>
         </div>
@@ -68,7 +71,6 @@ export function ResumePdf() {
                   <div class="desc">did This and that</div>
                 </div>
               </div>
-
             </div>
           </div>
           <div class="section">
@@ -96,21 +98,28 @@ export function ResumePdf() {
                   <div class="desc">did This and that</div>
                 </div>
               </div>
-
             </div>
-      
           </div>
           <div class="section">
-            <div class="section__title">Projects</div> 
+            <div class="section__title">Projects</div>
             <div class="section__list">
               <div class="section__list-item">
                 <div class="name">DSP</div>
-                <div class="text">I am a front-end developer with more than 3 years of experience writing html, css, and js. I'm motivated, result-focused and seeking a successful team-oriented company with opportunity to grow.</div>
+                <div class="text">
+                  I am a front-end developer with more than 3 years of
+                  experience writing html, css, and js. I'm motivated,
+                  result-focused and seeking a successful team-oriented company
+                  with opportunity to grow.
+                </div>
               </div>
-         
+
               <div class="section__list-item">
                 <div class="name">DSP</div>
-                <div class="text">I am a front-end developer with more than 3 years of experience writing html, css, and js. I'm motivated, result-focused and seeking a successful team-oriented company with opportunity to grow. <a href="/login">link</a>
+                <div class="text">
+                  I am a front-end developer with more than 3 years of
+                  experience writing html, css, and js. I'm motivated,
+                  result-focused and seeking a successful team-oriented company
+                  with opportunity to grow. <a href="/login">link</a>
                 </div>
               </div>
             </div>
@@ -119,14 +128,14 @@ export function ResumePdf() {
             <div class="section__title">Skills</div>
             <div class="skills">
               <div class="skills__item">
-                <div class="left"><div class="name">
-             Javascript
-                </div></div>
+                <div class="left">
+                  <div class="name">Javascript</div>
+                </div>
                 <div class="right">
-                  <input  id="ck1" type="checkbox" checked/>
+                  <input id="ck1" type="checkbox" checked />
 
                   <label for="ck1"></label>
-                  <input id="ck2" type="checkbox" checked/>
+                  <input id="ck2" type="checkbox" checked />
 
                   <label for="ck2"></label>
                   <input id="ck3" type="checkbox" />
@@ -136,19 +145,18 @@ export function ResumePdf() {
                   <label for="ck4"></label>
                   <input id="ck5" type="checkbox" />
                   <label for="ck5"></label>
-
                 </div>
               </div>
-         
             </div>
             <div class="skills__item">
-              <div class="left"><div class="name">
-             CSS</div></div>
+              <div class="left">
+                <div class="name">CSS</div>
+              </div>
               <div class="right">
-                <input  id="ck1" type="checkbox" checked/>
+                <input id="ck1" type="checkbox" checked />
 
                 <label for="ck1"></label>
-                <input id="ck2" type="checkbox" checked/>
+                <input id="ck2" type="checkbox" checked />
 
                 <label for="ck2"></label>
                 <input id="ck3" type="checkbox" />
@@ -158,25 +166,20 @@ export function ResumePdf() {
                 <label for="ck4"></label>
                 <input id="ck5" type="checkbox" />
                 <label for="ck5"></label>
-
               </div>
             </div>
-         
           </div>
           <div class="section">
-            <div class="section__title">
-       Interests
-            </div>
+            <div class="section__title">Interests</div>
             <div class="section__list">
-              <div class="section__list-item">
-                  Football, programming.
-              </div>
+              <div class="section__list-item">Football, programming.</div>
             </div>
           </div>
         </div>
       </header>
-      <button onClick={handleDownload} class="btn btn-primary">Download PDF</button>
-    </div>  
+      <button onClick={handleDownload} class="btn btn-primary">
+        Download PDF
+      </button>
+    </div>
   );
 }
-
