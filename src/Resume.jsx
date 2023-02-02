@@ -1,10 +1,27 @@
-export function Resume(props) {
+import { useState, useEffect } from "react";
+import { useParams } from "react-router-dom";
+import axios from "axios";
+
+export function Resume() {
+  const params = useParams()
+  const [resume, setResume] = useState({})
+
+  const handleShowResume = () => {
+    axios.get(`http://localhost:3000/resume/${params.id}.json`).then((response) => {
+      console.log(response.data)
+      setResume(response.data);
+    });
+  }
+
+  useEffect(handleShowResume, [])
+
+
   return (
     <div>
       <h2>
         <u>Resume</u>
       </h2>
-      {props.students.map((student) => (
+      {/* {props.students.map((student) => (
         <div key={student.id}>
           <h3>First Name: {student.first_name}</h3>
           <h3>Last Name: {student.last_name}</h3>
@@ -46,7 +63,7 @@ export function Resume(props) {
           <h3>Description: {capstone.description}</h3>
           <h3>Url: {capstone.url}</h3>
         </div>
-      ))}
+      ))} */}
     </div>
   );
 }
