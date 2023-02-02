@@ -21,23 +21,21 @@ export function Resume() {
       <h2>
         <u>Resume</u>
       </h2>
-      {/* {props.students.map((student) => (
-        <div key={student.id}>
-          <h3>First Name: {student.first_name}</h3>
-          <h3>Last Name: {student.last_name}</h3>
-          <h3>Email: {student.email}</h3>
-          <h3>Phone: {student.phone}</h3>
-          <h3>Biography: {student.biography}</h3>
-          <h3>LinkedIn: {student.linkedin_url}</h3>
-          <h3>Twitter: {student.twitter_url}</h3>
-          <h3>Website: {student.website_url}</h3>
-          <h3>Resume: {student.resume_url}</h3>
-          <h3>Github: {student.github_url}</h3>
-          <h3>Photo: {student.photo_url}</h3>
-        </div>
-      ))}
+      <div>
+        <h3>First Name: {resume.first_name}</h3>
+        <h3>Last Name: {resume.last_name}</h3>
+        <h3>Email: {resume.email}</h3>
+        <h3>Phone: {resume.phone}</h3>
+        <h3>Biography: {resume.biography}</h3>
+        <h3>LinkedIn: {resume.linkedin_url}</h3>
+        <h3>Twitter: {resume.twitter_url}</h3>
+        <h3>Website: {resume.website_url}</h3>
+        <h3>Resume: {resume.resume_url}</h3>
+        <h3>Github: {resume.github_url}</h3>
+        <h3>Photo: {resume.photo_url}</h3>
+      </div>
       <hr />
-      {props.educations.map((education) => (
+      {resume.educations?.map((education) => (
         <div key={education.id}>
           <h3>Start Date: {education.start}</h3>
           <h3>End Date: {education.end}</h3>
@@ -47,7 +45,7 @@ export function Resume() {
         </div>
       ))}
       <hr />
-      {props.experiences.map((experience) => (
+      {resume.experiences?.map((experience) => (
         <div key={experience.id}>
           <h3>Start Date: {experience.start}</h3>
           <h3>End Date: {experience.end}</h3>
@@ -57,13 +55,13 @@ export function Resume() {
         </div>
       ))}
       <hr />
-      {props.capstones.map((capstone) => (
+      {resume.capstones?.map((capstone) => (
         <div key={capstone.id}>
           <h3>Name: {capstone.name}</h3>
           <h3>Description: {capstone.description}</h3>
           <h3>Url: {capstone.url}</h3>
         </div>
-      ))} */}
+      ))}
     </div>
   );
 }
