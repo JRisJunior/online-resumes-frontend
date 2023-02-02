@@ -143,6 +143,19 @@ export function ResumePdf() {
         </div>
       </header>
       <button onClick={handleDownload} className="btn btn-primary">Download PDF</button>
+
+      <hr/>
+      { resume.twitter_user &&
+        <Timeline
+          dataSource={{
+            sourceType: 'profile',
+            screenName: resume.twitter_user
+          }}
+          options={{
+            height: '400'
+          }}
+        />
+      }
     </div>  
   );
 }
