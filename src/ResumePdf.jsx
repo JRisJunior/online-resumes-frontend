@@ -28,9 +28,7 @@ export function ResumePdf() {
       callback: function (doc) {
         doc.save('sample.pdf');
       },
-      width: 200,
-      windowWidth: 200,
-      margin: 20
+      padding: 10
     });
   };
 
