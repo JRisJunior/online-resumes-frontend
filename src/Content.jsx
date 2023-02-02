@@ -11,17 +11,7 @@ export function Content() {
 
       <Routes>
         <Route path="/" element={<Home/>} />
-        {/* <Route
-          path="/resume"
-          element={
-            <Resume
-              students={students}
-              educations={educations}
-              experiences={experiences}
-              capstones={capstones}
-            />
-          }
-        /> */}
+        <Route path="/resume/:id" element={<Resume/>} />
       </Routes>
     </div>
   );
