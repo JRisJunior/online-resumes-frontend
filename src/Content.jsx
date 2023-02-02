@@ -10,8 +10,8 @@ export function Content() {
       </h1>
 
       <Routes>
-        <Route path="/" element={<Home/>} />
-        <Route path="/resume/:id" element={<Resume/>} />
+        <Route path="/" element={<Home />} />
+        <Route path="/resume/:id" element={<Resume />} />
       </Routes>
     </div>
   );

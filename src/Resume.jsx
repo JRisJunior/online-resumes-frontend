@@ -3,18 +3,19 @@ import { useParams } from "react-router-dom";
 import axios from "axios";
 
 export function Resume() {
-  const params = useParams()
-  const [resume, setResume] = useState({})
+  const params = useParams();
+  const [resume, setResume] = useState({});
 
   const handleShowResume = () => {
-    axios.get(`http://localhost:3000/resume/${params.id}.json`).then((response) => {
-      console.log(response.data)
-      setResume(response.data);
-    });
-  }
+    axios
+      .get(`http://localhost:3000/resume/${params.id}.json`)
+      .then((response) => {
+        console.log(response.data);
+        setResume(response.data);
+      });
+  };
 
-  useEffect(handleShowResume, [])
-
+  useEffect(handleShowResume, []);
 
   return (
     <div>
@@ -33,6 +34,7 @@ export function Resume() {
         <h3>Resume: {resume.resume_url}</h3>
         <h3>Github: {resume.github_url}</h3>
         <h3>Photo: {resume.photo_url}</h3>
+        <h3>TESTING{resume.education}</h3>
       </div>
       <hr />
       {resume.educations?.map((education) => (

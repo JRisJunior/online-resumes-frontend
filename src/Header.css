@@ -1,0 +1,50 @@
+.logo {
+  height: 200px;
+  width: 200px;
+  float: left;
+}
+
+header { 
+  background: blanchedalmond;
+  margin-right: 0;
+  padding-right: 0;
+  padding-left: 0;
+  margin-left: 0;
+}
+
+.nav {
+  float: right;
+  min-width: 1300px;
+  max-width: 100%;
+}
+
+header::after {
+  content: '';
+  display: table;
+  clear: both;
+}
+
+nav ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+nav li {
+  display: inline-block;
+  margin-left: 30px;
+  padding-top: 40px;
+  text-decoration: none;
+  text-transform: uppercase;
+  position: relative;
+}
+
+.login {
+  float: right;
+}
+
+.home {
+  font-size: 7;
+  position: center;
+
+}

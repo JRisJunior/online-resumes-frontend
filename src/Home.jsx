@@ -8,13 +8,14 @@ export function Home() {
 
   const handleIndexResume = () => {
     axios.get("http://localhost:3000/resumes.json").then((response) => {
-      console.log(response.data)
+      console.log(response.data);
       setResumes(response.data);
     });
-  }
+  };
 
-  useEffect(handleIndexResume, [])
+  useEffect(handleIndexResume, []);
 
+  console.log(resumes);
   return (
     <div>
       <h2>
