@@ -19,6 +19,34 @@ export function Resume(props) {
           <h3>Photo: {student.photo_url}</h3>
         </div>
       ))}
+      <hr />
+      {props.educations.map((education) => (
+        <div key={education.id}>
+          <h3>Start Date: {education.start}</h3>
+          <h3>End Date: {education.end}</h3>
+          <h3>Degree: {education.degree}</h3>
+          <h3>University: {education.university}</h3>
+          <h3>Details: {education.details}</h3>
+        </div>
+      ))}
+      <hr />
+      {props.experiences.map((experience) => (
+        <div key={experience.id}>
+          <h3>Start Date: {experience.start}</h3>
+          <h3>End Date: {experience.end}</h3>
+          <h3>Title: {experience.title}</h3>
+          <h3>Company: {experience.company}</h3>
+          <h3>Details: {experience.details}</h3>
+        </div>
+      ))}
+      <hr />
+      {props.capstones.map((capstone) => (
+        <div key={capstone.id}>
+          <h3>Name: {capstone.name}</h3>
+          <h3>Description: {capstone.description}</h3>
+          <h3>Url: {capstone.url}</h3>
+        </div>
+      ))}
     </div>
   );
 }
